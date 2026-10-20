@@ -1,0 +1,65 @@
+﻿# Private configuration files
+/connect.php
+/db.php
+/mail_config.php
+/.env
+/.env.*
+
+# Logs and debug files
+*.log
+/debug_*.php
+/diag_*.php
+/test_*.php
+
+# Backup files
+*_backup.php
+*_fixed_backup.php
+*.bak
+*.tmp
+
+# Local shortcuts
+*.lnk
+
+# Large video files
+*.mp4
+/v2
+
+# Runtime uploads and payment QR
+/uploads/
+
+
+# Local development notes
+/TODO*.md
+/TODO.md
+/TODO_*.md
+/PHPdoc (1).docx
+
+# Extra local scripts
+/Untitled-2.php
+/addcap.php
+/quick_import.php
+/reset_products.php
+/reset_user_password.php
+/run_banner_migration.php
+/run_feedback_migration.php
+/run_migration.php
+/run_security_migration.php
+
+# Debug SQL files
+/debug_order_schema.sql
+
+# Local project screenshots
+/Screenshots/
+
+# Keep original database setup and local backup private
+/admin/database_setup.sql
+/admin/database_setup_local_backup.sql
+
+# Admin private configuration and runtime uploads
+/admin/config/database.php
+/admin/uploads/
+/admin/debug_dashboard.php
+/admin/diagnose_totals.php
+/admin/order-list.php.backup
+/admin/TODO.md
+/admin/ADMIN_PLAN.md

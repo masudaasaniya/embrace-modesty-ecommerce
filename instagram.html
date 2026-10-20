@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAYA Collection | Modest Fashion Instagram</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #823c49;
+            --secondary-color: #a64d5c;
+            --bg-color: #fdf9f9;
+            --card-bg: #ffffff;
+            --text-dark: #2d2d2d;
+            --text-light: #666666;
+            --border-color: #e8e8e8;
+            --soft-pink: #f8ecef;
+            --gold-accent: #c9a86a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- CONTAINER --- */
+        .container {
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        .insta-header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 4px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-actions a {
+            font-size: 24px;
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+
+        .header-actions a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- PROFILE SECTION --- */
+        .profile-section {
+            background: var(--card-bg);
+            padding: 40px 0 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            flex-shrink: 0;
+        }
+
+        .profile-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            padding: 3px;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-top {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .username {
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--text-dark);
+        }
+
+        .follow-btn {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 8px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .follow-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .profile-bio h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .profile-bio p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* --- HIGHLIGHTS --- */
+        .highlights-section {
+            background: var(--card-bg);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .highlights {
+            display: flex;
+            gap: 30px;
+            padding: 10px 0;
+        }
+
+        .highlight-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            min-width: 70px;
+        }
+
+        .highlight-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f8ecef 0%, #e8d5d8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .highlight-item:hover .highlight-circle {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .highlight-circle i {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .highlight-label {
+            font-size: 12px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        /* --- TABS NAVIGATION --- */
+        .tabs-nav {
+            background: var(--card-bg);
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab-item {
+            padding: 15px 0;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .tab-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--text-dark);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .tab-item:hover,
+        .tab-item.active {
+            color: var(--text-dark);
+        }
+
+        .tab-item.active::after {
+            transform: scaleX(1);
+        }
+
+        .tab-item i {
+            margin-right: 5px;
+        }
+
+        /* --- PRODUCT GRID --- */
+        .products-section {
+            padding: 30px 0 60px;
+            background: var(--bg-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        /* --- PRODUCT CARD --- */
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(130, 60, 73, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .quick-view-btn {
+            background: #fff;
+            color: var(--primary-color);
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: translateY(20px);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover .quick-view-btn {
+            transform: translateY(0);
+        }
+
+        .quick-view-btn:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .current-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .original-price {
+            font-size: 14px;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .shop-now-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .shop-now-btn:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* --- FOOTER --- */
+        .insta-footer {
+            background: var(--card-bg);
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--soft-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .profile-image img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .username {
+                font-size: 22px;
+            }
+
+            .profile-stats {
+                justify-content: center;
+            }
+
+            .highlights {
+                gap: 20px;
+            }
+
+            .highlight-circle {
+                width: 60px;
+                height: 60px;
+            }
+
+            .tabs-nav {
+                gap: 30px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .header-content {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-stats {
+                gap: 25px;
+            }
+
+            .stat-number {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="insta-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="homepage2.php" class="logo">
+                    HAYA
+                    <span>COLLECTION</span>
+                </a>
+                <div class="header-actions">
+                    <a href="homepage2.php"><i class="fa-solid fa-house"></i></a>
+                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                    <a href="cart.php"><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROFILE SECTION -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-image">
+                    <img src="homp.jpeg" alt="HAYA Collection Profile">
+                </div>
+                <div class="profile-info">
+                    <div class="profile-top">
+                        <span class="username">haya.collection</span>
+                        <a href="#" class="follow-btn">Follow</a>
+                        <a href="#" class="follow-btn" style="background: transparent; color: var(--text-dark); border: 1px solid var(--border-color);">Message</a>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">248</div>
+                            <div class="stat-label">Posts</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15.2K</div>
+                            <div class="stat-label">Followers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">312</div>
+                            <div class="stat-label">Following</div>
+                        </div>
+                    </div>
+                    <div class="profile-bio">
+                        <h1>HAYA Collection</h1>
+                        <p>✨ Premium Modest Fashion | hijabs, burqas & accessories<br>
+                        📦 Worldwide Shipping | Quality Guaranteed<br>
+                        💬 DM for orders & inquiries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="highlights-section">
+        <div class="container">
+            <div class="highlights">
+                <div class="highlight-item">
+                    <div class="highlight-circle">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="highlight-label">New In</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <span class="highlight-label">Premium</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <span class="highlight-label">Bestsellers</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <span class="highlight-label">Sale</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <span class="highlight-label">Orders</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <span class="highlight-label">Reviews</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABS NAVIGATION -->
+    <nav class="tabs-nav">
+        <div class="tab-item active"><i class="fa-solid fa-grid-2"></i> Posts</div>
+        <div class="tab-item"><i class="fa-solid fa-play"></i> Reels</div>
+        <div class="tab-item"><i class="fa-solid fa-user-tag"></i> Tagged</div>
+    </nav>
+
+    <!-- PRODUCTS GRID -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Shop Our Latest Collection</h2>
+                <p>Discover elegant modest fashion pieces</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="skaff1.jpg" alt="Premium Skaff Hijab">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Hijabs</div>
+                        <h3 class="product-name">Premium Skaff Hijab</h3>
+                        <div class="product-price">
+                            <span class="current-price">$24.99</span>
+                            <span class="original-price">$34.99</span>
+                        </div>
+                        <a href="shoppage2.php" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="burkha1.jpeg" alt="Elegant Burkha">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Burkha</div>
+                        <h3 class="product-name">Elegant Open Abaya</h3>
+                        <div class="product-price">
+                            <span class="current-price">$89.99</span>
+                        </div>
+                        <a href="shoppage2.php" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="cap1.jpg" alt="Stylish Cap">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Caps</div>
+                        <h3 class="product-name">Crystal Cap</h3>
+                        <div class="product-price">
+                            <span class="current-price">$12.99</span>
+                            <span class="original-price">$18.99</span>
+                        </div>
+                        <a href="shoppage2.php" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="skaff5.jpg" alt="Silk Skaff">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Hijabs</div>
+                        <h3 class="product-name">Silk Blend Skaff</h3>
+                        <div class="product-price">
+                            <span class="current-price">$29.99</span>
+                        </div>
+                        <a href="shoppage2.php" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="burkha5.jpeg" alt="Designer Burkha">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Burkha</div>
+                        <h3 class="product-name">Designer Open Abaya</h3>
+                        <div class="product-price">
+                            <span class="current-price">$119.99</span>
+                            <span class="original-price">$149.99</span>
+                        </div>
+                        <a href="shoppage2.php" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="pin1.jpg" alt="Hijab Pins Set">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Accessories</div>
+                        <h3 class="product-name">Crystal Pin Set</h3>
+                        <div class="product-price">
+                            <span class="current-price">$8.99</span>
+                        </div>
+                        <a href="shoppage2.php" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="skaff10.jpg" alt="Premium Hijab">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Hijabs</div>
+                        <h3 class="product-name">Najm Premium Scarf</h3>
+                        <div class="product-price">
+                            <span class="current-price">$27.99</span>
+                        </div>
+                        <a href="shoppage2.php" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="burkha10.jpg" alt="Modern Burkha">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Burkha</div>
+                        <h3 class="product-name">Modern Abaya Dress</h3>
+                        <div class="product-price">
+                            <span class="current-price">$79.99</span>
+                            <span class="original-price">$99.99</span>
+                        </div>
+                        <a href="shoppage2.php" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="cap5.jpg" alt="Embroidered Cap">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Caps</div>
+                        <h3 class="product-name">Embroidered Cap</h3>
+                        <div class="product-price">
+                            <span class="current-price">$15.99</span>
+                        </div>
+                        <a href="shoppage2.php" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="insta-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Help</a>
+                <a href="#">Press</a>
+                <a href="#">API</a>
+                <a href="#">Jobs</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Locations</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+            </div>
+            <p class="copyright">© 2024 HAYA Collection. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

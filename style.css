@@ -1,0 +1,317 @@
+:root {
+    --primary-black: #2D2D2D;
+    --gold-accent: #C9A86A;
+    --sage-accent: #9FB7A6;
+    --gold-dark: #b59458;
+    --white-bg: #F7F7F7;
+    --soft-blush: #f3ede2;
+    --card-bg: #FFFFFF;
+    --divider: #EAEAEA;
+    --text-dark: #2D2D2D;
+    --card-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+}
+
+html, body {
+    background: var(--white-bg) !important;
+    color: var(--text-dark) !important;
+}
+
+/* Header / Navbar */
+header,
+.header,
+.topbar,
+.navbar,
+.top-header {
+    background: var(--card-bg) !important;
+    color: var(--text-dark) !important;
+    border-color: var(--divider) !important;
+}
+
+.brand,
+.logo,
+.navbar-brand,
+header h1 span,
+.header h1 span {
+    color: var(--gold-accent) !important;
+}
+
+nav a,
+nav ul li a,
+.nav-link,
+.sidebar-link,
+.sidebar-submenu-item {
+    color: var(--text-dark) !important;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+nav a:hover,
+nav ul li a:hover,
+.nav-link:hover,
+.sidebar-link:hover,
+.sidebar-submenu-item:hover {
+    color: var(--sage-accent) !important;
+}
+
+/* Section titles */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-black);
+}
+
+section h2,
+section h3,
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+section h2::after,
+section h3::after,
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 70%;
+    height: 2px;
+    background: var(--gold-accent);
+}
+
+/* Buttons */
+button,
+.btn,
+input[type="submit"],
+input[type="button"],
+.add-to-cart-btn,
+.add-cart,
+#buyNowBtn,
+#searchBtn {
+    background: var(--gold-accent) !important;
+    color: #fff !important;
+    border: 1px solid var(--gold-accent) !important;
+    transition: all 0.25s ease;
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.add-to-cart-btn:hover,
+.add-cart:hover,
+#buyNowBtn:hover,
+#searchBtn:hover {
+    background: var(--sage-accent) !important;
+    color: #fff !important;
+    border-color: var(--sage-accent) !important;
+}
+
+/* Form controls */
+input,
+select,
+textarea {
+    border-color: var(--divider) !important;
+    background: #fff !important;
+    color: var(--text-dark) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none !important;
+    border-color: var(--sage-accent) !important;
+    box-shadow: 0 0 0 2px rgba(159, 183, 166, 0.22) !important;
+}
+
+/* Cards / panels */
+.product-card,
+.card,
+.panel,
+.contact-card,
+.hack-card,
+.face-card,
+.tone-card,
+.order-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--divider) !important;
+    box-shadow: var(--card-shadow) !important;
+}
+
+.product-card span,
+.price,
+.amount,
+.brand-highlight {
+    color: var(--gold-accent) !important;
+}
+
+/* Category soft blush overlay on hover */
+.category-section .product-card,
+[data-category].product-card {
+    position: relative;
+}
+
+.category-section .product-card::before,
+[data-category].product-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(159, 183, 166, 0.2);
+    opacity: 0;
+    transition: opacity .3s ease;
+    pointer-events: none;
+}
+
+.category-section .product-card:hover::before,
+[data-category].product-card:hover::before {
+    opacity: 1;
+}
+
+/* Links */
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: var(--gold-accent) !important;
+}
+
+/* Footer */
+footer,
+.footer,
+.footer-inner,
+.admin-footer {
+    background: var(--primary-black) !important;
+    color: #fff !important;
+    border-top: 1px solid #3a3a3a !important;
+}
+
+footer a,
+.footer a {
+    color: #fff !important;
+}
+
+footer a:hover,
+.footer a:hover {
+    color: var(--gold-accent) !important;
+}
+
+/* Admin area */
+.sidebar,
+.sidebar-menu,
+.admin-sidebar,
+.dashboard-header {
+    background: var(--card-bg) !important;
+    color: var(--text-dark) !important;
+    border-color: var(--divider) !important;
+}
+
+.badge,
+.status-badge,
+.chip {
+    background: var(--gold-accent) !important;
+    color: var(--primary-black) !important;
+}
+
+hr,
+.divider {
+    border-color: var(--divider) !important;
+}
+
+/* Admin/data readability refinements */
+table,
+.table {
+    background: #fff !important;
+    color: var(--text-dark) !important;
+    border-color: var(--divider) !important;
+}
+
+table th,
+.table th,
+thead th {
+    background: #f4f4f4 !important;
+    color: var(--primary-black) !important;
+    border-color: var(--divider) !important;
+}
+
+table td,
+.table td,
+.table tr {
+    border-color: var(--divider) !important;
+}
+
+table tr:hover td,
+.table tbody tr:hover td {
+    background: #fdf7f7 !important;
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+    background: #fff !important;
+    color: var(--text-dark) !important;
+    border-color: var(--divider) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--sage-accent) !important;
+    box-shadow: 0 0 0 0.2rem rgba(159, 183, 166, 0.2) !important;
+}
+
+.alert,
+.notice,
+.message {
+    border-color: var(--divider) !important;
+}
+
+.pagination .page-link {
+    color: var(--primary-black) !important;
+    border-color: var(--divider) !important;
+    background: #fff !important;
+}
+
+.pagination .page-link:hover,
+.pagination .active .page-link {
+    color: var(--primary-black) !important;
+    background: var(--gold-accent) !important;
+    border-color: var(--gold-accent) !important;
+}
+
+/* Premium announcement banner */
+.collection-banner {
+    width: 100% !important;
+    background: linear-gradient(90deg, #FFF8F0 0%, #EEF5F2 100%) !important;
+    color: #2D2D2D !important;
+    padding: 48px 20px !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+    font-size: clamp(28px, 3.2vw, 34px) !important;
+    letter-spacing: 2px !important;
+    line-height: 1.3 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 28px rgba(45, 45, 45, 0.08) !important;
+}
+
+.collection-banner::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background:
+        radial-gradient(circle at 18% 35%, rgba(201, 168, 106, 0.08), transparent 45%),
+        radial-gradient(circle at 82% 70%, rgba(159, 183, 166, 0.1), transparent 48%) !important;
+    pointer-events: none !important;
+}
+
+.collection-banner::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 18px !important;
+    transform: translateX(-50%) !important;
+    width: 80px !important;
+    height: 2px !important;
+    background: #C9A86A !important;
+    border-radius: 2px !important;
+}
